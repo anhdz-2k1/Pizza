@@ -36,8 +36,8 @@ namespace Pizza.Models
                     new Product
                     {
                         Name = "#3 TROPICANA SEAFOOD",
-                        Description = "https://api.alfrescos.com.vn//uploads/images/Alfrescos-Hanoi-Pizza-Tropicana-Seafood.jpg",
-                        Img = "",
+                        Description = "Tôm, cá, cua thanh, ngao, dứa, xốt ớt chua ngọt và phomát.",
+                        Img = "https://api.alfrescos.com.vn//uploads/images/Alfrescos-Hanoi-Pizza-Tropicana-Seafood.jpg",
                         Category = "Pizza",
                     },
                     new Product
