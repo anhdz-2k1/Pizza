@@ -12,8 +12,10 @@ namespace Pizza.Models
         public string Description { get; set; }
         public string Img { get; set; }
         public string Category { get; set; }
-        public long PriceSizeID { get; set; }
+        
+        public virtual ICollection<PriceSize> PriceSizes { get; set; }
 
-        public virtual PriceSize PriceSize { get; set; }
     }
 }
+
+

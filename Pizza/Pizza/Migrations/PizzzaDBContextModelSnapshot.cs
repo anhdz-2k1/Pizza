@@ -28,10 +28,15 @@ namespace Pizza.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(8,2)");
 
+                    b.Property<long>("ProductID")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Size")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ProductID");
 
                     b.ToTable("PriceSizes");
                 });
@@ -55,30 +60,25 @@ namespace Pizza.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("PriceSizeID")
-                        .HasColumnType("bigint");
-
                     b.HasKey("ProductID");
-
-                    b.HasIndex("PriceSizeID");
 
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Pizza.Models.Product", b =>
+            modelBuilder.Entity("Pizza.Models.PriceSize", b =>
                 {
-                    b.HasOne("Pizza.Models.PriceSize", "PriceSize")
-                        .WithMany("Products")
-                        .HasForeignKey("PriceSizeID")
+                    b.HasOne("Pizza.Models.Product", "Product")
+                        .WithMany("PriceSizes")
+                        .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("PriceSize");
+                    b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Pizza.Models.PriceSize", b =>
+            modelBuilder.Entity("Pizza.Models.Product", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("PriceSizes");
                 });
 #pragma warning restore 612, 618
         }
