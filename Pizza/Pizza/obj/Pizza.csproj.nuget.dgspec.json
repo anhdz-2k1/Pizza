@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learn\\EAP\\ASM\\Pizza\\Pizza\\Pizza\\Pizza.csproj": {}
+    "D:\\My Folder\\ASP\\ASM\\Pizza\\Pizza\\Pizza.csproj": {}
   },
   "projects": {
-    "D:\\Learn\\EAP\\ASM\\Pizza\\Pizza\\Pizza\\Pizza.csproj": {
+    "D:\\My Folder\\ASP\\ASM\\Pizza\\Pizza\\Pizza.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learn\\EAP\\ASM\\Pizza\\Pizza\\Pizza\\Pizza.csproj",
+        "projectUniqueName": "D:\\My Folder\\ASP\\ASM\\Pizza\\Pizza\\Pizza.csproj",
         "projectName": "Pizza",
-        "projectPath": "D:\\Learn\\EAP\\ASM\\Pizza\\Pizza\\Pizza\\Pizza.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Learn\\EAP\\ASM\\Pizza\\Pizza\\Pizza\\obj\\",
+        "projectPath": "D:\\My Folder\\ASP\\ASM\\Pizza\\Pizza\\Pizza.csproj",
+        "packagesPath": "C:\\Users\\jinch\\.nuget\\packages\\",
+        "outputPath": "D:\\My Folder\\ASP\\ASM\\Pizza\\Pizza\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jinch\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -26,6 +26,7 @@ namespace Pizza.Controllers
                .OrderBy(p => p.ProductID)
                .Skip((productPage - 1) * PageSize)
                .Take(PageSize),
+               PriceSizes = repository.PriceSizes,
                PagingInfo = new PagingInfo
                {
                    CurrentPage = productPage,
