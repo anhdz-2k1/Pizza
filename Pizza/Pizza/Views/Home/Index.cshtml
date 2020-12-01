@@ -18,63 +18,37 @@
         </div>
         <div class="card-text p-1">
             @p.Description
-            <button onclick="@SelectProduct(p.ProductID)" data-toggle="modal" data-target="#productModal" type="submit" class="btn btn-success btn-sm pull-right" style="float:right">
-                Add To Cart
-            </button>
-        </div>
-    </div>
-    @*<partial name="ProductSummary" model="p" />*@
-}
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header" id="19">
-                @selectedProduct.ProductID
-            </div>
-
-            <div class="modal-body">
-                @*<form method="post" asp-page="/Cart" id="@selectedProduct.ProductID">
-                    <input type="hidden" name="productId" value="@selectedProduct.ProductID" />
-                    @foreach (var p in priceSizeProduct)
+            <form method="post" asp-page="/Cart" id="@p.ProductID">
+                <input type="hidden" name="productId" value="@p.ProductID" />
+                @foreach (var q in Model.PriceSizes)
+                {
+                    if (q.ProductID == p.ProductID)
                     {
-                        <h6>@p.Size</h6>
-                        <h6>@p.Price</h6>
-                        <input type="checkbox" name="priceSizeId" value="@p.ID"/>
+                        <h6>@q.Size</h6>
+                        <h6>@q.Price</h6>
+                        <input type="checkbox" name="priceSizeId" value="@q.ID" />
                     }
+
+                }
                 <input type="hidden" name="quantity" value="1" />
-                    <input type="hidden" name="returnUrl"
-                           value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-                    <span class="card-text p-1">
+                <input type="hidden" name="returnUrl"
+                       value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                <span class="card-text p-1">
 
-                        <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right">
-                            Add To Cart
-                        </button>
-                    </span>
-                </form>*@
-            </div>
-
-            <div class="modal-footer">
-
-            </div>
+                    <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right">
+                        Add To Cart
+                    </button>
+                </span>
+            </form>
+            @*<button data-toggle="modal" data-target="#productModal" type="submit" class="btn btn-success btn-sm pull-right" style="float:right">
+                Add To Cart
+            </button>*@
         </div>
     </div>
-</div>
+}
 
 <div page-model="@Model.PagingInfo" page-action="Index"
      page-classes-enabled="true"
      page-class="btn" page-class-normal="btn-outline-dark"
      page-class-selected="btn-primary" class="btn-group pull-right m-1">
 </div>
-
-@functions {
-    Product selectedProduct;
-    IEnumerable<PriceSize> priceSizeProduct;
-    IStoreRepository repository;
-
-    Product SelectProduct(long productId)
-    {
-        selectedProduct = repository.Products.First(x => x.ProductID == productId);
-        priceSizeProduct = repository.PriceSizes.Where(x => x.ProductID == productId);
-        return selectedProduct;
-    }
-}
