@@ -1,54 +1,118 @@
 ﻿@model ProductsListViewModel
 
-@foreach (var p in Model.Products)
-{
-    <div class="card card-outline-primary m-1 p-1 product">
-        <div class="bg-faded p-1">
-            <h4>@p.Name - @p.Category</h4>
-            <img src="@p.Img" />
-            @foreach (var q in Model.PriceSizes)
-            {
-                if (q.ProductID == p.ProductID)
-                {
-                    <h1>@q.Size</h1>
-                    <h1>@q.Price</h1>
-                }
-            }
-
+<section class="section1">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="header1 col-md-7">
+                <button type="button" href="#">
+                    <img src="https://api.alfrescos.com.vn//uploads/images/SECTION-1.jpg" />
+                    <p class="header1-1 col-md-12">Khuyến Mại</p>
+                </button>
+            </div>
+            <div class="abc col-md-4">
+                <button type="button" href="#">
+                    <img src="https://api.alfrescos.com.vn//uploads/images/dc312d8c-68d8-4ae0-8d2a-c70e367d836f.jpg" />
+                    <p class="Pizza col-md-12">Pizza</p>
+                </button>
+                <button type="button" href="#">
+                    <img src="https://api.alfrescos.com.vn//uploads/images/1920e78f-1386-4819-9d60-b420758aaef9.jpg" />
+                    <p class="Starters col-md-12">Starters</p>
+                </button>
+            </div>
         </div>
-        <div class="card-text p-1">
-            @p.Description
-            <form method="post" asp-page="/Cart" id="@p.ProductID">
-                <input type="hidden" name="productId" value="@p.ProductID" />
-                @foreach (var q in Model.PriceSizes)
-                {
-                    if (q.ProductID == p.ProductID)
-                    {
-                        <h6>@q.Size</h6>
-                        <h6>@q.Price</h6>
-                        <input type="checkbox" name="priceSizeId" value="@q.ID" />
-                    }
 
-                }
-                <input type="hidden" name="quantity" value="1" />
-                <input type="hidden" name="returnUrl"
-                       value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-                <span class="card-text p-1">
-
-                    <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right">
-                        Add To Cart
+        <div class="header2 col-md-12">
+            <div class="header2-1 ">
+                <div class="header2-1-1 col-md-5">
+                    <button type="button" href="#">
+                        <img src="https://api.alfrescos.com.vn//uploads/images/4ee9c57c-15c8-45c4-8116-f257c3cdd29c.jpg" />
+                        <p class="category">Salads</p>
                     </button>
-                </span>
-            </form>
-            @*<button data-toggle="modal" data-target="#productModal" type="submit" class="btn btn-success btn-sm pull-right" style="float:right">
-                Add To Cart
-            </button>*@
+                </div>
+                <div class="header2-1-1 col-md-5">
+                    <button type="button" href="#">
+                        <img src="https://api.alfrescos.com.vn//uploads/images/1e1f80cb-80a5-46bb-8f87-fe304049af8d.jpg" />
+                        <p class="category">Pasta</p>
+                    </button>
+                </div>
+            </div>
+
+            <div class="header2-2 col-md-4">
+                <button type="button" href="#">
+                    <img src="https://api.alfrescos.com.vn//uploads/images/1bc1e462-e578-49f3-84c8-039c27b30dd7.jpg" />
+                    <p class="category">Ribs & Steak</p>
+                </button>
+            </div>
+        </div>
+        <div class="header3 col-md-12">
+            <ul style=" list-style: none;
+                        text-decoration: none;
+                        display: flex;
+                        margin-top: 70px;
+                        justify-content: space-evenly;">
+                <vc:navigation-menu />
+            </ul>
         </div>
     </div>
-}
+</section>
+<section class="section2">
+    <div class="container">
+      
 
-<div page-model="@Model.PagingInfo" page-action="Index"
+        <div class="section2-1 col-md-12">
+      
+
+                <p><font style="color: red">----------------------------------------------------</font></p>
+
+                
+                @foreach (var p in Model.Products)
+                {
+
+                        <div class="product product1 col-md-3">
+                            <button href="">
+                                <img src="@p.Img" width="310" />
+                            </button>
+                            <p class="title">@p.Name - @p.Category</p>
+           
+            
+                            <form method="post" asp-page="/Cart" id="@p.ProductID">
+                                <input type="hidden" name="productId" value="@p.ProductID" />
+                                
+                                @foreach (var q in Model.PriceSizes)
+                                {
+                                    if (q.ProductID == p.ProductID)
+                                    {
+                                        if (q.Size == "S" || q.Size == "L" || q.Size == "XL")
+                                        {
+                                            <p style="color: red"><input type="checkbox" name="priceSizeId" value="@q.ID" /> @q.Size: @q.Price $</p>
+                                        }
+                                        else
+                                        {
+                                            <p style="color: red">@q.Price $</p>
+                                        }
+                                      
+                                    }
+
+                                }
+                                <input type="hidden" name="quantity" value="1" />
+                                <input type="hidden" name="returnUrl"
+                                       value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                                <span class="card-text p-1">
+
+                                    <button type="submit" class="buy">Add To Cart</button>
+                                </span>
+                            </form>
+                            <p class="describe">@p.Description</p>
+           
+                        </div>
+                }
+            </div>
+    </div>
+</section>
+<div style="margin-right: 100px"
+     page-model="@Model.PagingInfo" page-action="Index"
      page-classes-enabled="true"
      page-class="btn" page-class-normal="btn-outline-dark"
-     page-class-selected="btn-primary" class="btn-group pull-right m-1">
+     page-class-selected="btn-primary" class="btn-group pull-right m-2">
 </div>
+

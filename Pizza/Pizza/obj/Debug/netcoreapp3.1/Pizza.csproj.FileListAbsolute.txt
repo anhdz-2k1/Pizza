@@ -323,3 +323,10 @@ D:\My Folder\ASP\ASM\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Pages\Cart.cshtml
 D:\My Folder\ASP\ASM\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Pages\_CartLayout.cshtml.g.cs
 D:\My Folder\ASP\ASM\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 D:\My Folder\ASP\ASM\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+E:\scholl\ASM-pizza\Pizza\Pizza\Pizza\bin\Debug\netcoreapp3.1\libman.json
+E:\scholl\ASM-pizza\Pizza\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Pages\Cart.cshtml.g.cs
+E:\scholl\ASM-pizza\Pizza\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Pages\_CartLayout.cshtml.g.cs
+E:\scholl\ASM-pizza\Pizza\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+E:\scholl\ASM-pizza\Pizza\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+E:\scholl\ASM-pizza\Pizza\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\NavigationMenu\Default.cshtml.g.cs
+E:\scholl\ASM-pizza\Pizza\Pizza\Pizza\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ProductSummary.cshtml.g.cs

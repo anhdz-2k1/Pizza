@@ -1,14 +1,28 @@
 ﻿@model IEnumerable<string>
 
-<a class="btn btn-block btn-outline-secondary"
-   asp-action="Index"
-   asp-controller="Home"
-   asp-route-category="">Home</a>
+<li>
+    <a style="  text-decoration: none;
+                color: white;
+                border: 1px solid white;
+                padding: 15px 40px;
+                border-radius: 20px;"
+        asp-action="Index"
+        asp-controller="Home"
+        asp-route-category="">Home</a>
+</li>
 
 @foreach (string category in Model)
 {
-    <a class="btn btn-block btn-outline-secondary"
-       asp-action="Index" asp-controller="Home"
-       asp-route-category="@category"
-       asp-route-productPage="1">@category</a>
+    <li>
+        <a style="
+        text-decoration: none;
+        color: white;
+        border: 1px solid white;
+        padding: 15px 40px;
+        border-radius: 20px;"
+           asp-action="Index" asp-controller="Home"
+           asp-route-category="@category"
+           asp-route-productPage="1">@category
+        </a>
+    </li>
 }

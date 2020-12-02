@@ -32,6 +32,11 @@ namespace Pizza
                     opts.UseSqlServer(Configuration["ConnectionStrings:PizzaConnection"]);
                 });
             services.AddScoped<IStoreRepository, EFStoreRepository>();
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,14 +55,14 @@ namespace Pizza
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                
-               
 
                 endpoints.MapControllerRoute("catpage",
                     "{category}/Page{productPage:int}",
@@ -76,6 +81,7 @@ namespace Pizza
                           new { Controller = "Home", action = "Index", productPage = 1 });
 
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapRazorPages();
             });
             SeedData.EnsurePopulated(app);
         }
