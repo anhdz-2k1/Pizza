@@ -30,7 +30,8 @@ namespace Pizza.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Size = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
-                    ProductID = table.Column<long>(type: "bigint", nullable: false)
+                    ProductSizeID = table.Column<long>(type: "bigint", nullable: false),
+                    ProductID = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -40,7 +41,7 @@ namespace Pizza.Migrations
                         column: x => x.ProductID,
                         principalTable: "Products",
                         principalColumn: "ProductID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

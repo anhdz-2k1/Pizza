@@ -119,19 +119,19 @@ namespace Pizza.Models
                     {
                         Price = 150000,
                         Size = "S",
-                        ProductID = 1
+                        ProductSizeID = 1
                     },
                     new PriceSize
                     {
                         Price = 220000,
                         Size = "L",
-                        ProductID = 1
+                        ProductSizeID = 1
                     },
                     new PriceSize
                     {
                         Price = 260000,
                         Size = "XL",
-                        ProductID = 1
+                        ProductSizeID = 1
                     },
 
 
@@ -139,19 +139,19 @@ namespace Pizza.Models
                     {
                         Price = 150000,
                         Size = "S",
-                        ProductID = 2
+                        ProductSizeID = 2
                     },
                     new PriceSize
                     {
                         Price = 220000,
                         Size = "L",
-                        ProductID = 2
+                        ProductSizeID = 2
                     },
                     new PriceSize
                     {
                         Price = 260000,
                         Size = "XL",
-                        ProductID = 2
+                        ProductSizeID = 2
                     },
 
 
@@ -159,19 +159,19 @@ namespace Pizza.Models
                     {
                         Price = 150000,
                         Size = "S",
-                        ProductID = 3
+                        ProductSizeID = 3
                     },
                     new PriceSize
                     {
                         Price = 220000,
                         Size = "L",
-                        ProductID = 3
+                        ProductSizeID = 3
                     },
                     new PriceSize
                     {
                         Price = 260000,
                         Size = "XL",
-                        ProductID = 3
+                        ProductSizeID = 3
                     },
 
 
@@ -179,75 +179,75 @@ namespace Pizza.Models
                     {
                         Price = 150000,
                         Size = "S",
-                        ProductID = 4
+                        ProductSizeID = 4
                     },
                     new PriceSize
                     {
                         Price = 230000,
                         Size = "L",
-                        ProductID = 4
+                        ProductSizeID = 4
                     },
                     new PriceSize
                     {
                         Price = 260000,
                         Size = "XL",
-                        ProductID = 4
+                        ProductSizeID = 4
                     },
 
                     new PriceSize
                     {
                         Price = 70000,
                         Size = "",
-                        ProductID = 5
+                        ProductSizeID = 5
                     },
 
                     new PriceSize
                     {
                         Price = 80000,
                         Size = "",
-                        ProductID = 6
+                        ProductSizeID = 6
                     },
 
                     new PriceSize
                     {
                         Price = 80000,
                         Size = "",
-                        ProductID = 7
+                        ProductSizeID = 7
                     },
 
                     new PriceSize
                     {
                         Price = 90000,
                         Size = "",
-                        ProductID = 8
+                        ProductSizeID = 8
                     },
 
                     new PriceSize
                     {
                         Price = 140000,
                         Size = "",
-                        ProductID = 9
+                        ProductSizeID = 9
                     },
 
                     new PriceSize
                     {
                         Price = 110000,
                         Size = "",
-                        ProductID = 10
+                        ProductSizeID = 10
                     },
 
                     new PriceSize
                     {
                         Price = 140000,
                         Size = "",
-                        ProductID = 11
+                        ProductSizeID = 11
                     },
 
                     new PriceSize
                     {
                         Price = 130000,
                         Size = "",
-                        ProductID = 12
+                        ProductSizeID = 12
                     }
 
                 );

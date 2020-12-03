@@ -12,7 +12,7 @@ namespace Pizza.Models
         public string Size { get; set; }
         [Column(TypeName = "decimal(8,2)")]
         public decimal Price { get; set; }
-        public long ProductID { get; set; }
+        public long ProductSizeID { get; set; }
 
         public virtual Product Product { get; set; }
     }
